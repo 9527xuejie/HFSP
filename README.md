@@ -8,7 +8,7 @@ All copyright reserved.
 安装Numpy,matplotlib,pandas,plotly,colorama等第三方库  
 
 2 运行  
-python test_ga_hfsp   
+python test_ga_hfsp.py     
 具体参数见文件       
 
 3 甘特图    
