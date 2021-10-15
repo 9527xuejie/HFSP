@@ -1,6 +1,6 @@
 # HFSP
  Hybrid Flow Shop Scheduling Problem. Genetic Algorithm. Tabu search.  
-E-mail: yangguangcan930@gmail.com  
+E-mail: 2315466330@qq.com    
 All copyright reserved.  
 
 1 运行准备  
