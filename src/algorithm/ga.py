@@ -2,6 +2,7 @@ __doc__ = """
 遗传算法
 """
 
+import copy
 import time
 
 import numpy as np
@@ -33,6 +34,11 @@ class Ga:
         self.max_tabu = Utils.len_tabu(self.schedule.m, self.schedule.n)
         self.individual = range(self.pop_size)
         self.tabu_list = [[] for _ in self.individual]
+        # for selection
+        self.pop_copy = [[], [], []]
+        self.tabu_copy = [[] for _ in self.individual]
+        self.pop_selection_pool = [[], [], []]
+        self.pop_selection_tabu_pool = []
 
     def clear(self):
         self.best = [None, None, None, [[], [], []]]
@@ -48,15 +54,15 @@ class Ga:
     def decode(self, code):
         pass
 
-    def append_individual(self, info_new):
+    def replace_individual(self, i, info_new):
         obj_new, fit_new = self.get_obj_fit(info_new)
-        self.pop[0].append(info_new)
-        self.pop[1].append(obj_new)
-        self.pop[2].append(fit_new)
-        self.tabu_list.append([])
+        self.pop[0][i] = info_new
+        self.pop[1][i] = obj_new
+        self.pop[2][i] = fit_new
+        self.tabu_list[i] = []
         self.replace_best(info_new, obj_new, fit_new)
 
-    def replace_individual(self, i, info_new):
+    def replace_individual_better(self, i, info_new):
         obj_new, fit_new = self.get_obj_fit(info_new)
         if Utils.update_info(self.pop[1][i], obj_new):
             self.pop[0][i] = info_new
@@ -83,12 +89,12 @@ class Ga:
                 self.record[2][g]))
 
     def selection_roulette(self):
-        a = np.array(self.pop[2]) / sum(self.pop[2])
+        a = np.array(self.pop_selection_pool[2]) / sum(self.pop_selection_pool[2])
         b = np.array([])
         for i in range(a.shape[0]):
             b = np.append(b, sum(a[:i + 1]))
-        pop = self.pop
-        tabu_list = self.tabu_list
+        pop = self.pop_selection_pool
+        tabu_list = self.pop_selection_tabu_pool
         self.pop = [[], [], []]
         self.tabu_list = [[] for _ in self.individual]
         c = np.random.random(self.pop_size)
@@ -100,8 +106,8 @@ class Ga:
             self.tabu_list[i] = tabu_list[j]
 
     def selection_champion2(self):
-        pop = self.pop
-        tabu_list = self.tabu_list
+        pop = self.pop_selection_pool
+        tabu_list = self.pop_selection_tabu_pool
         self.pop = [[], [], []]
         self.tabu_list = [[] for _ in self.individual]
         for i in range(self.pop_size):
@@ -135,8 +141,15 @@ class Ga:
         return func_dict[self.schedule.ga_operator[Selection.name]]
 
     def do_selection(self):
+        for i in range(3):
+            self.pop_selection_pool[i].extend(self.pop[i])
+            self.pop_selection_pool[i].extend(self.pop_copy[i])
+        self.pop_selection_tabu_pool.extend(self.tabu_list)
+        self.pop_selection_tabu_pool.extend(self.tabu_copy)
         self.func_selection()
         self.save_best()
+        self.pop_selection_pool = [[], [], []]
+        self.pop_selection_tabu_pool = []
 
     def do_init(self):
         pass
@@ -167,9 +180,10 @@ class Ga:
         self.clear()
         self.do_init()
         self.update_best()
-        self.do_selection()
         self.show_generation(0)
         for g in range(1, self.max_generation + 1):
+            self.pop_copy = copy.deepcopy(self.pop)
+            self.taub_copy = copy.deepcopy(self.tabu_list)
             if self.reach_best_known_solution():
                 break
             if self.reach_max_stay_generation(g):
@@ -211,16 +225,16 @@ class GaHfsp(Ga):
     def do_crossover(self, i, j, p):
         if p < self.rc:
             code1, code2 = self.pop[0][i].ga_crossover_sequence_permutation(self.pop[0][j])
-            self.append_individual(self.decode(code1))
-            self.append_individual(self.decode(code2))
+            self.replace_individual(i, self.decode(code1))
+            self.replace_individual(j, self.decode(code2))
 
     def do_mutation(self, i, q):
         if q < self.rm:
             code1 = self.pop[0][i].ga_mutation_sequence_permutation()
-            self.append_individual(self.decode(code1))
+            self.replace_individual(i, self.decode(code1))
 
     def do_tabu_search(self, i):
         code1 = self.pop[0][i].ts_sequence_permutation_based(self.tabu_list[i], self.max_tabu)
-        self.replace_individual(i, self.decode(code1))
+        self.replace_individual_better(i, self.decode(code1))
         if len(self.tabu_list[i]) >= self.max_tabu:
             self.tabu_list[i] = []
