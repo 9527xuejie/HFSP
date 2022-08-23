@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63f75b47-6032-4fb8-bbf2-6399ed89c19d" name="Default Changelist" comment="Add files via upload.">
-      <change beforePath="$PROJECT_DIR$/.idea/HFSP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HFSP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/Code/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/Code/1.txt" afterDir="false" />
@@ -29,7 +27,6 @@
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/GanttChart/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/GanttChart/7.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/GanttChart/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/GanttChart/8.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/GanttChart/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/GanttChart/9.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/GanttChartPngHtml/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/GanttChartPngHtml/3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/10.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/10.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/2.csv" afterDir="false" />
@@ -40,38 +37,12 @@
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/7.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/8.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA-TS_HFSP/real1/Record/9.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Code/9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Code/9.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/10.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/10.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/5.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/6.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/7.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/8.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/GanttChart/9.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/10.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/10.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/3.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/5.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/5.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/6.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/6.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/7.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/7.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/8.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/8.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GA_HFSP/real1/Record/9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/GA_HFSP/real1/Record/9.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot_gantt_chart.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot_gantt_chart.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithm/ga.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/ga.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_ga_hfsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_ga_hfsp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +64,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ShopSchedule" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.plot_gantt_chart">

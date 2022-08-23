@@ -183,7 +183,7 @@ class Ga:
         self.show_generation(0)
         for g in range(1, self.max_generation + 1):
             self.pop_copy = copy.deepcopy(self.pop)
-            self.taub_copy = copy.deepcopy(self.tabu_list)
+            self.tabu_copy = copy.deepcopy(self.tabu_list)
             if self.reach_best_known_solution():
                 break
             if self.reach_max_stay_generation(g):
@@ -224,9 +224,10 @@ class GaHfsp(Ga):
 
     def do_crossover(self, i, j, p):
         if p < self.rc:
-            code1, code2 = self.pop[0][i].ga_crossover_sequence_permutation(self.pop[0][j])
+            # code1, code2 = self.pop[0][i].ga_crossover_sequence_permutation(self.pop[0][j])
+            code1, code2 = self.pop[0][i].ga_crossover_sequence_permutation(self.pop_copy[0][j])
             self.replace_individual(i, self.decode(code1))
-            self.replace_individual(j, self.decode(code2))
+            # self.replace_individual(j, self.decode(code2))
 
     def do_mutation(self, i, q):
         if q < self.rm:
