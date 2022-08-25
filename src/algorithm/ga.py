@@ -62,6 +62,23 @@ class Ga:
         self.tabu_list[i] = []
         self.replace_best(info_new, obj_new, fit_new)
 
+    def replace_individual_comp(self, i, info_new, info_new2):
+        obj_new, fit_new = self.get_obj_fit(info_new)
+        obj_new1, fit_new1 = self.pop_copy[1][i], self.pop_copy[2][i]
+        obj_new2, fit_new2 = self.get_obj_fit(info_new2)
+        fit_list = [fit_new, fit_new1, fit_new2]
+        max_fit = max(fit_list)
+        idx_max_fit = fit_list.index(max_fit)
+        if idx_max_fit == 1:
+            info_new, obj_new, fit_new = self.pop_copy[0][i], obj_new1, fit_new1
+        elif idx_max_fit == 2:
+            info_new, obj_new, fit_new = info_new2, obj_new2, fit_new2
+        self.pop[0][i] = info_new
+        self.pop[1][i] = obj_new
+        self.pop[2][i] = fit_new
+        self.tabu_list[i] = []
+        self.replace_best(info_new, obj_new, fit_new)
+
     def replace_individual_better(self, i, info_new):
         obj_new, fit_new = self.get_obj_fit(info_new)
         if Utils.update_info(self.pop[1][i], obj_new):
@@ -226,7 +243,8 @@ class GaHfsp(Ga):
         if p < self.rc:
             # code1, code2 = self.pop[0][i].ga_crossover_sequence_permutation(self.pop[0][j])
             code1, code2 = self.pop[0][i].ga_crossover_sequence_permutation(self.pop_copy[0][j])
-            self.replace_individual(i, self.decode(code1))
+            # self.replace_individual(i, self.decode(code1))
+            self.replace_individual_comp(i, self.decode(code1), self.decode(code2))
             # self.replace_individual(j, self.decode(code2))
 
     def do_mutation(self, i, q):
