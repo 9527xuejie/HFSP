@@ -64,14 +64,16 @@ class Ga:
 
     def replace_individual_comp(self, i, info_new, info_new2):
         obj_new, fit_new = self.get_obj_fit(info_new)
-        obj_new1, fit_new1 = self.pop_copy[1][i], self.pop_copy[2][i]
+        # obj_new1, fit_new1 = self.pop_copy[1][i], self.pop_copy[2][i]
         obj_new2, fit_new2 = self.get_obj_fit(info_new2)
-        fit_list = [fit_new, fit_new1, fit_new2]
+        # fit_list = [fit_new, fit_new1, fit_new2]
+        fit_list = [fit_new, fit_new2]
         max_fit = max(fit_list)
         idx_max_fit = fit_list.index(max_fit)
+        # if idx_max_fit == 1:
+        #     info_new, obj_new, fit_new = self.pop_copy[0][i], obj_new1, fit_new1
+        # elif idx_max_fit == 2:
         if idx_max_fit == 1:
-            info_new, obj_new, fit_new = self.pop_copy[0][i], obj_new1, fit_new1
-        elif idx_max_fit == 2:
             info_new, obj_new, fit_new = info_new2, obj_new2, fit_new2
         self.pop[0][i] = info_new
         self.pop[1][i] = obj_new
