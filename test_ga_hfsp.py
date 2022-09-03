@@ -13,7 +13,7 @@ def main(instance="example"):
     best_known = hfsp_benchmark.best_known[instance]
     # best_known = None
     problem = Utils.create_schedule(Hfsp, n, m, p, tech, proc, best_known=best_known, time_unit=time_unit)
-    ga = GaHfsp(pop_size=40, rc=0.65, rm=0.35, max_generation=int(10e4), objective=Objective.makespan,
+    ga = GaHfsp(pop_size=60, rc=0.65, rm=0.35, max_generation=int(10e4), objective=Objective.makespan,
                 schedule=problem, max_stay_generation=50)
     ga.schedule.ga_operator[Crossover.name] = Crossover.pmx
     ga.schedule.ga_operator[Mutation.name] = Mutation.tpe
