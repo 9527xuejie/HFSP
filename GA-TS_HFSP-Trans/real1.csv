@@ -1,0 +1,17 @@
+Test,Objective,IterationReachBest
+1,27.0,2
+2,27.0,2
+3,27.0,5
+4,27.0,28
+5,27.0,4
+6,27.0,7
+7,27.0,2
+8,27.0,2
+9,27.0,3
+10,27.0,4
+MinObj,27.0
+MaxObj,27.0
+MeanObj,27.00
+MinIter,2
+MaxIter,28
+MeanIter,5.90
