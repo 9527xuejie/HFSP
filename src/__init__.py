@@ -1,5 +1,5 @@
-from .algorithm import GaHfsp
-from .data import hfsp_benchmark
+from .algorithm import GaHfsp, GaHfspConsiderTrans
+from .data import hfsp_benchmark, hfsp_machine_transport_time
 from .define import Crossover, Mutation, Selection
 from .info import GanttChart
 from .objective import Objective

@@ -259,3 +259,11 @@ class GaHfsp(Ga):
         self.replace_individual_better(i, self.decode(code1))
         if len(self.tabu_list[i]) >= self.max_tabu:
             self.tabu_list[i] = []
+
+
+class GaHfspConsiderTrans(GaHfsp):
+    def __init__(self, pop_size, rc, rm, max_generation, objective, schedule, max_stay_generation=None):
+        GaHfsp.__init__(self, pop_size, rc, rm, max_generation, objective, schedule, max_stay_generation)
+
+    def decode(self, code):
+        return self.schedule.decode_with_trans(code)

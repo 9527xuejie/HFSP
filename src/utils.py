@@ -15,7 +15,7 @@ init(autoreset=True)
 
 class Utils:
     @staticmethod
-    def create_schedule(shop, n, m, p, tech, proc, best_known=None, time_unit=1):  # 创建一个车间调度对象
+    def create_schedule(shop, n, m, p, tech, proc, trans=None, best_known=None, time_unit=1):  # 创建一个车间调度对象
         schedule = shop()
         schedule.best_known = best_known  # 已知最优目标值
         schedule.time_unit = time_unit  # 加工时间单位
@@ -25,6 +25,9 @@ class Utils:
             schedule.add_job(name=i)
             for j in range(p[i]):  # 添加工序, p是一个包含n个元素的列表, 对应n个工件的工序数量
                 schedule.job[i].add_task(tech[i][j], proc[i][j], name=j)
+        if trans is not None:  # 添加机器间的运输时间
+            for i in range(m):
+                schedule.machine[i].add_trans(trans[i])
         return schedule
 
     @staticmethod
@@ -134,6 +137,21 @@ class Utils:
             return None, None, None, None, None
 
     @staticmethod
+    def string2trans_time(string, dtype=int, time_unit=1, ):
+        try:
+            to_data = list(map(dtype, string.split()))
+            m = int(to_data[0])
+            a = [[] for _ in range(m)]
+            idx = 0
+            for i in to_data[1:]:
+                a[idx].append(time_unit * i)
+                if len(a[idx]) == m:
+                    idx += 1
+            return a
+        except ValueError:
+            return None
+
+    @staticmethod
     def save_code_to_txt(file, data):
         if not file.endswith(".txt"):
             file = file + ".txt"
@@ -201,3 +219,29 @@ class Utils:
                     for u, v in zip(tech[i][j], proc[i][j]):
                         d += "%s %s " % (u + 1, v)
                 f.writelines("%s\n" % d)
+
+    @staticmethod
+    def create_data_hfsp_trans(instance, m, low, high, dtype=int):
+        Utils.make_dir("./src/data/hfsp")
+        if not instance.endswith(".txt"):
+            instance = instance + ".txt"
+        instance = "%s-trans.txt" % instance[:-4]
+        n_machine = sum(m)
+        with open("./src/data/hfsp/%s" % instance, "w", encoding="utf-8") as f:
+            f.writelines("%s\n" % n_machine)
+            for i, j in enumerate(m):
+                fore = sum(m[:i + 1])
+                behind = sum(m[:i + 2])
+                for k in range(j):
+                    b = ""
+                    for u in range(fore):
+                        b += "0 "
+                    try:
+                        a = np.random.uniform(low, high, m[i + 1]).astype(dtype)
+                        for u in a:
+                            b += "%s " % u
+                    except IndexError:
+                        pass
+                    for u in range(behind, n_machine):
+                        b += "0 "
+                    f.writelines("%s\n" % b)

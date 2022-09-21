@@ -11,9 +11,18 @@ class Machine:  # 机器类
         self.index = index
         self.name = name
         self.end = 0  # 机器上的最大完成时间
+        self.trans = []  # 机器间的运输时间
         # 机器空闲时间数据类型：字典，0：空闲开始时刻，1：空闲结束时刻
         self.idle = {0: [0, ], 1: [np.inf, ]}
 
     def clear(self):  # 解码用：重置
         self.end = 0
         self.idle = {0: [0, ], 1: [np.inf, ]}
+
+    def add_trans(self, trans_time):
+        """
+        添加机器间的运输时间
+        :param trans_time:
+        :return:
+        """
+        self.trans = trans_time
