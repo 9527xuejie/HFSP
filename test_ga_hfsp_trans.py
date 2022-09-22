@@ -13,8 +13,7 @@ def main(instance="example"):
     # b = Utils.load_text("./src/data/hfsp/%s-trans.txt" % instance)
     n, m, p, tech, proc = Utils.string2data_hfsp(a, int, time_unit)
     trans = Utils.string2trans_time(b, int, time_unit)
-    best_known = hfsp_benchmark.best_known[instance]
-    # best_known = None
+    best_known = None
     problem = Utils.create_schedule(Hfsp, n, m, p, tech, proc, trans=trans, best_known=best_known, time_unit=time_unit)
     ga = GaHfspConsiderTrans(pop_size=60, rc=0.65, rm=0.35, max_generation=int(10e4), objective=Objective.makespan,
                              schedule=problem, max_stay_generation=50)
