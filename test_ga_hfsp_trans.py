@@ -10,6 +10,7 @@ def main(instance="example"):
     a = hfsp_benchmark.instance[instance]
     b = hfsp_machine_transport_time.instance[instance]
     # a = Utils.load_text("./src/data/hfsp/%s.txt" % instance)
+    # b = Utils.load_text("./src/data/hfsp/%s-trans.txt" % instance)
     n, m, p, tech, proc = Utils.string2data_hfsp(a, int, time_unit)
     trans = Utils.string2trans_time(b, int, time_unit)
     best_known = hfsp_benchmark.best_known[instance]
