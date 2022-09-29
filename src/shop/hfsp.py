@@ -118,10 +118,10 @@ class Hfsp(Schedule):
                 p = self.job[i].task[j].duration[self.job[i].task[j].machine.index(k)]
                 try:
                     a = self.job[i].task[j - 1].end
-                    pre_k = self.job[i].task[j - 1].machine
+                    pre_k = mac[i][j - 1]
                 except KeyError:
                     a = 0
-                    pre_k = self.job[i].task[0].machine
+                    pre_k = None
                 trans = self.machine[pre_k].trans[k]
                 for r, (b, c) in enumerate(zip(self.machine[k].idle[0], self.machine[k].idle[1])):
                     early_start = max([a + trans, b])
