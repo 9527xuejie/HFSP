@@ -122,7 +122,10 @@ class Hfsp(Schedule):
                 except KeyError:
                     a = 0
                     pre_k = None
-                trans = self.machine[pre_k].trans[k]
+                try:
+                    trans = self.machine[pre_k].trans[k]
+                except KeyError:
+                    trans = 0
                 for r, (b, c) in enumerate(zip(self.machine[k].idle[0], self.machine[k].idle[1])):
                     early_start = max([a + trans, b])
                     if early_start + p <= c:
